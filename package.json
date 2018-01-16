@@ -1,0 +1,15 @@
+{
+  "name": "langloys",
+  "version": "1.0.0",
+  "description": "Powerful shell for rapidly deploying your WordPress projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thomasbck",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
