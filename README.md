@@ -1,6 +1,7 @@
 # [HTML5 Blank theme for WordPress]
 
 Powerful shell for rapidly deploying your WordPress projects.
+
 Based on htmlblank project [html5blank.com](http://html5blank.com) by Todd Motto [Todd Motto](http://toddmotto.com)
 
 
