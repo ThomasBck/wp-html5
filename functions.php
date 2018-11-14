@@ -16,7 +16,7 @@
 \*------------------------------------*/
 
 /* Add navwalker class to implement bootstrap nav */ 
-require_once('wp_bootstrap_navwalker.php');
+require_once('class-wp-bootstrap-navwalker.php');
 
 /* change link on logo (login page)*/
 function my_login_logo_url() {
@@ -99,9 +99,9 @@ function html5blank_nav()
         'container_class'   => 'collapse navbar-collapse',
         'container_id'      => 'reponsive-menu',
         'menu_class'        => 'nav navbar-nav',
-        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-        'walker'            => new wp_bootstrap_navwalker())
-    );
+        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+        'walker'            => new WP_Bootstrap_Navwalker()
+    ));
     
 }
 
