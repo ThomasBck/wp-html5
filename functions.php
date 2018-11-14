@@ -28,7 +28,7 @@ add_filter( 'login_headerurl', 'my_login_logo_url' );
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/langloys_logo.gif);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.svg);
             padding-bottom: 30px;
             -webkit-background-size: 90px;
             -moz-background-size: 90px;
@@ -110,16 +110,16 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('myjquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), '1.0.0'); // Custom scripts
+        wp_register_script('myjquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('myjquery'); // Enqueue it! 
 
-        wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array(), '1.0.0'); // Custom scripts
+        wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('popper'); // Enqueue it! 
 
         wp_register_script('backstretch', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('backstretch'); // Enqueue it!  
 
-        wp_register_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js', array(), '1.0.0'); // Custom scripts
+        wp_register_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('bootstrap-js'); // Enqueue it!    	
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
@@ -140,10 +140,7 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
-
-    wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css', array(), '1.0', 'all');
+    wp_register_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '1.0', 'all');
     wp_enqueue_style('bootstrap'); // Enqueue it!
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
