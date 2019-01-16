@@ -147,9 +147,6 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    wp_register_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '1.0', 'all');
-    wp_enqueue_style('bootstrap'); // Enqueue it!
-
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }

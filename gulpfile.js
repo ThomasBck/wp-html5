@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var cleanCSS = require('gulp-clean-css');
  
 gulp.task('styles', function() {
  
@@ -13,6 +14,14 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./')) //destination des fichiers compilés sass en css
  
 });
+
+ 
+gulp.task('mini', () => {
+  return gulp.src('style.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./'));
+});
+
 
 //Watch task
 gulp.task('default',function() {
