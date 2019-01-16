@@ -14,6 +14,13 @@
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
+function mode_maintenance() {
+    if( !is_user_logged_in() || !current_user_can('administrator')) {
+    wp_die('<div style="padding:5rem;"><div style="text-align:center;"><img src="'.get_stylesheet_directory_uri().'/img/logo.svg" style="width:50%;"/></div><p style="color:#444; text-align:center;">Nous effectuons des mises à jour sur notre site internet afin de rendre meilleur son expérience, Level2 revient rapidement.</p>');
+    }
+}
+//add_action('get_header', 'mode_maintenance');// activer si on veut le mode maintenance
+
 
 /* Add navwalker class to implement bootstrap nav */ 
 require_once('class-wp-bootstrap-navwalker.php');

@@ -5,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
  
 gulp.task('styles', function() {
  
-    gulp.src('sass/**/*.scss') //source à inspecter
+    return gulp.src('sass/**/*.scss') //source à inspecter
     	.pipe(sourcemaps.init()) //initialisation de sourcemap
         .pipe(sass().on('error', sass.logError)) //affichage des erreurs si il y a
         .pipe(sourcemaps.write()) //correspondances de fichier sass>css  
@@ -13,8 +13,8 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./')) //destination des fichiers compilés sass en css
  
 });
- 
+
 //Watch task
 gulp.task('default',function() {
-    gulp.watch('sass/**/*.scss',['styles']);
+     gulp.watch('sass/**/*.scss', gulp.series('styles'));
 });
