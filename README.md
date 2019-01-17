@@ -15,6 +15,7 @@ Based on htmlblank project [html5blank.com](http://html5blank.com) by Todd Motto
 * Clean, neatly organised code, with PHP annotations
 
 ### jQuery + JavaScript
+* Basic Gulp tasks (watch scss files for dev and minify CSS for prod)
 * Replaced built-in WordPress enqueue with Google CDN
 * Protocol relative jQuery if Google CDN offline (HTML5 Boilerplate)
 * Conditionizr for cross-platform/device detects and enhancements
@@ -23,6 +24,7 @@ Based on htmlblank project [html5blank.com](http://html5blank.com) by Todd Motto
 * JavaScript files enqueued using WordPress functions into wp_head
 
 ### CSS3
+* Use scss for dev
 * HTML5 Boilerplate reset
 * Media Queries framework for instant development using @media
 * @font-face empty framework with Fonts folder setup ready for new custom fonts
@@ -50,6 +52,7 @@ Based on htmlblank project [html5blank.com](http://html5blank.com) by Todd Motto
 * Space for development, neatly organised code with Modules/External files
 
 ### Theme Files and Functionality
+* Compliance with Bootstrap V4
 * Built in Pagination, no plugins (strips out prev + next post and gives page numbers)
 * Optimised Google Analytics in footer (HTML5 Boilerplate)
 * Widget Area Sidebar support, functions in place to get developing
