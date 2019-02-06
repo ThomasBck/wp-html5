@@ -47,10 +47,93 @@ function my_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
-if (!isset($content_width))
-{
-    $content_width = 900;
+
+
+
+//add admin theme panel 
+function l2_add_admin_page(){
+    //First level
+    add_menu_page('Theme options', 'Level2', 'manage_options', 'page_l2', 'l2_theme_create_page', get_template_directory_uri().'/img/icons/admin-icon.png', 61 );
+
+    //second level create submenu page with same 
+    //add_submenu_page('page_l2', 'Nerya Theme options', 'settings', 'manage_options', 'page_l2', 'nerya_theme_create_page' );
+    //add_submenu_page('page_l2', 'Nerya css option', 'custom css', 'manage_options', 'page_l2_css', 'nerya_theme_css_page' );
+
 }
+ 
+add_action('admin_menu', 'l2_add_admin_page');
+add_action('admin_init', 'l2_settings');
+
+function l2_settings(){
+    register_setting('l2-settings-group','l2_adresse');
+    register_setting('l2-settings-group','l2_tel');
+    register_setting('l2-settings-group','l2_mail');
+    register_setting('l2-settings-group','l2_linkedin');
+    register_setting('l2-settings-group','l2_vimeo');
+
+    add_settings_section('l2-sidebar-options','Options de base', 'l2_sidebar_options' ,'page_l2');
+
+    add_settings_section('l2-sidebar-social','Réseaux sociaux', 'l2_sidebar_social' ,'page_l2');
+
+
+
+    add_settings_field('sidebar-adresse','Adresse','l2_sidebar_adresse','page_l2','l2-sidebar-options');
+
+
+    add_settings_field('sidebar-tel','Tel','l2_sidebar_tel','page_l2','l2-sidebar-options');
+    add_settings_field('sidebar-mail','E-mail','l2_sidebar_mail','page_l2','l2-sidebar-options');
+
+
+     add_settings_field('sidebar-linkedin','Linkedin','l2_sidebar_social_linkedin','page_l2','l2-sidebar-social');
+    add_settings_field( 'sidebar-vimeo', 'Vimeo', 'l2_sidebar_social_vimeo', 'page_l2', 'l2-sidebar-social' );
+
+}
+
+function l2_sidebar_options(){
+    echo 'Information de base';
+}
+function l2_sidebar_social(){
+    echo 'Liens vers les réseaux sociaux';
+}
+
+
+function l2_sidebar_adresse(){
+    $adresse = esc_attr(get_option( 'l2_adresse' ));
+    echo '<input type="text" name="l2_adresse" value="'.$adresse.'" class="regular-text" placeholder="Adresse de société" />';
+}
+function l2_sidebar_tel(){
+    $tel = esc_attr(get_option( 'l2_tel' ));
+    echo '<input type="text" name="l2_tel" value="'.$tel.'" class="regular-text" placeholder="Telephone" />';
+}
+
+function l2_sidebar_mail(){
+    $mail = esc_attr(get_option( 'l2_mail' ));
+    echo '<input type="text" name="l2_mail" value="'.$mail.'" class="regular-text" placeholder="Email" />';
+}
+
+function l2_sidebar_social_linkedin(){
+    $linkedin = esc_attr(get_option( 'l2_linkedin' ));
+    echo '<input type="text" name="l2_linkedin" value="'.$linkedin.'" class="regular-text" placeholder="Lien profil LinkedIn" /> ';
+}
+
+function l2_sidebar_social_vimeo(){
+    $vimeo = esc_attr(get_option( 'l2_vimeo' ));
+    echo '<input type="text" name="l2_vimeo" value="'.$vimeo.'" class="regular-text" placeholder="Lien profil Vimeo" />';
+}
+
+
+ function l2_theme_create_page(){
+    //generation of admin page
+
+    require_once(get_template_directory().'/admin/admin.php');
+
+ }
+
+
+
+ //end admin theme panel
+
+
 
 if (function_exists('add_theme_support'))
 {
