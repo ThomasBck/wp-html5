@@ -74,6 +74,35 @@ input:focus {
 	border:1px solid #04A4CC;
 }
 
+div.wpcf7 form.wpcf7-form span.ajax-loader {width: 50px; height: 50px; background-image:url('img/icons/crochets.svg'); background-size: 50px}
+div.wpcf7-response-output {
+    padding: 0.2em 1em;
+    border: 2px solid darken($primary-color, 25%);
+    background-color: $primary-color;
+    color: white;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    padding: 30px;
+    bottom: 0;
+    z-index: 999;
+}
+.cookie-notice-container{
+	height: 200px;
+	background-color: $primary-color !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 56px 70px 50px black;
+	.cn-more-info,.cn-set-cookie{
+		background-color: transparent !important;
+		background-image: unset !important;
+		border:1px solid #fff !important;
+		padding:7px 15px !important;
+	}
+}
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
