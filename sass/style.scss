@@ -22,7 +22,7 @@
 /* global box-sizing */ 
 *,
 *:after,
-*:before {
+*:before {  
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 	-webkit-font-smoothing:antialiased;
@@ -35,7 +35,7 @@ html {
 	font-size:62.5%;
 }
 body {
-	font:300 16px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
 }
 /* clear */
@@ -77,7 +77,7 @@ input:focus {
 .no-link{
 	text-decoration: none;
 }
-
+/* CF7 */
 div.wpcf7 form.wpcf7-form span.ajax-loader {width: 50px; height: 50px; background-image:url('img/icons/crochets.svg'); background-size: 50px}
 div.wpcf7-response-output {
     padding: 0.2em 1em;
@@ -96,8 +96,11 @@ div.wpcf7-response-output {
 span > textarea{
 	width: 100%;
 }
+/* END CF7 */
+
+/*COOKIE NOTICE*/
 .cookie-notice-container{
-	height: 200px;
+	height: 60vh;
 	background-color: $primary-color !important;
 	display: flex; 
 	align-items: center;
@@ -110,6 +113,7 @@ span > textarea{
 		padding:7px 15px !important;
 	}
 }
+/*END COOKIE NOTICE*/
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
