@@ -11,6 +11,7 @@
 require_once'assets/sanitize-file-upload.php';
 require_once'assets/class-wp-bootstrap-navwalker.php';
 require_once'assets/admin-custom-fields.php';
+require_once'assets/shortcode-custom.php';
 
 function xml_sitemap() {
     $postsForSitemap = get_posts(array(
