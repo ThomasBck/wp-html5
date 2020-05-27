@@ -99,18 +99,23 @@ span > textarea{
 /* END CF7 */
 
 /*COOKIE NOTICE*/
-.cookie-notice-container{
-	height: 60vh;
-	background-color: $primary-color !important;
-	display: flex; 
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0 56px 70px 50px black;
-	.cn-more-info,.cn-set-cookie{
-		background-color: transparent !important;
-		background-image: unset !important;
-		border:1px solid #fff !important;
-		padding:7px 15px !important;
+#cookie-notice{
+	.cookie-notice-container{
+		height: 60vh;
+		background-color: $primary-color !important;
+		display: flex ; 
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 56px 70px 50px black;
+		#cn-notice-text{
+			width: 30vw; 
+		}
+		.cn-more-info,.cn-set-cookie{
+			background-color: transparent !important;
+			background-image: unset !important;
+			border:1px solid #fff !important;
+			padding:7px 15px !important;
+		}
 	}
 }
 /*END COOKIE NOTICE*/
